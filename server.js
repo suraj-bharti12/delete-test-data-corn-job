@@ -174,7 +174,7 @@ async function run() {
 }
 
 // Schedule the run function to execute every day at 2:05 PM
-const task = cron.schedule('5 14 * * 1', () => {   
+const task = cron.schedule('40 15 * * *', () => {   
     console.log('Running scheduled task');
     run().catch(console.error);
 }, {
