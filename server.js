@@ -86,6 +86,7 @@
 
 const { MongoClient } = require('mongodb');
 const cron = require('node-cron');
+const port = process.env.PORT || 4000;
 
 // MongoDB connection string
 const uri = 'mongodb+srv://mojitolabs12:admin@mojitolabs.wibrhle.mongodb.net/new-test';
@@ -177,3 +178,6 @@ const task = cron.schedule('5 14 * * *', () => {
 });
 
 task.start();
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
