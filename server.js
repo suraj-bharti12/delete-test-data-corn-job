@@ -86,6 +86,10 @@
 
 const { MongoClient } = require('mongodb');
 const cron = require('node-cron');
+const express = require('express');
+
+const app = express();
+const port = 3000;  // Define the port you want to use
 
 // MongoDB connection string
 const uri = 'mongodb+srv://mojitolabs12:admin@mojitolabs.wibrhle.mongodb.net/new-test';
@@ -177,3 +181,11 @@ const task = cron.schedule('5 14 * * *', () => {
 });
 
 task.start();
+
+app.get('/', (req, res) => {
+    res.send('Cron job is running!');
+});
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
