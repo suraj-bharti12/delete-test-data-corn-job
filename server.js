@@ -173,8 +173,8 @@ async function run() {
     await deleteOldData();
 }
 
-// Schedule the run function to execute every day at 2:05 PM
-const task = cron.schedule('5 13 * * 1', () => {   
+// Schedule the run function to execute every day at 1:05 PM
+const task = cron.schedule('5 16 * * *', () => {   
     console.log('Running scheduled task');
     run().catch(console.error);
 }, {
