@@ -93,7 +93,7 @@ const port = 3000;  // Define the port you want to use
 
 
 // MongoDB connection string
-const uri = 'mongodb+srv://shiva:ZxJf1KONMThYSpCU@cluster0.yuxls.mongodb.net/test';
+const uri = 'mongodb+srv://mojitolabs12:admin@mojitolabs.wibrhle.mongodb.net/new-test';
 
 async function convertCreatedAtToDate() {
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -174,7 +174,7 @@ async function run() {
 }
 
 // Schedule the run function to execute every day at 1:05 PM
-const task = cron.schedule('5 16 * * *', () => {   
+const task = cron.schedule('25 16 * * *', () => {   
     console.log('Running scheduled task');
     run().catch(console.error);
 }, {
